@@ -1,4 +1,4 @@
-from PyQt5 import QtWidgets, QtCore
+from PyQt4 import QtGui, QtCore
 
 from easypyqt.dialog import basicdialog
 
@@ -15,8 +15,8 @@ class TextInputDialog(basicdialog.BasicDialog):
         self.text_ = None
 
         # Widgets
-        self.lineEdit = QtWidgets.QLineEdit()
-        self.messageLabel = QtWidgets.QLabel(str(self.message))
+        self.lineEdit = QtGui.QLineEdit()
+        self.messageLabel = QtGui.QLabel(str(self.message))
 
         # Layout
         if self.message:
@@ -45,8 +45,8 @@ class TextInputDialog(basicdialog.BasicDialog):
 
 if __name__ == '__main__':
     import sys
-    from PyQt5 import QtWidgets
-    app = QtWidgets.QApplication(sys.argv)
+
+    app = QtGui.QApplication(sys.argv)
 
     pd = TextInputDialog(title='Input', message='Please type something..', placeholder_text='..anything..', auto_exec=True)
 
